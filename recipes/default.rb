@@ -28,7 +28,7 @@ include_recipe "build-essential"
 case node['platform']
 when "arch"
   package "apache"
-when "centos","redhat"
+when "amazon","centos","redhat","scientific"
   package "httpd-devel"
   if node['platform_version'].to_f < 6.0
     package 'curl-devel'

@@ -20,10 +20,10 @@ Opscode cookbooks:
 Attributes 
 ====
 
-* `passenger[:version]` - Specify the version of passenger to install.
-* `passenger[:max_pool_size]` - Sets PassengerMaxPoolSize in the Apache module config.
-* `passenger[:root_path]` - The location of the passenger gem.
-* `passenger[:module_path]` - The location of the compiled passenger apache module.
+* `passenger['version']` - Specify the version of passenger to install.
+* `passenger['max_pool_size']` - Sets PassengerMaxPoolSize in the Apache module config.
+* `passenger['root_path']` - The location of the passenger gem.
+* `passenger['module_path']` - The location of the compiled passenger apache module.
 
 Recipes
 =======
@@ -46,8 +46,8 @@ For example, to run a Rails application on passenger:
     
     web_app "myproj" do
       docroot "/srv/myproj/public"
-      server_name "myproj.#{node[:domain]}"
-      server_aliases [ "myproj", node[:hostname] ]
+      server_name "myproj.#{node['domain']}"
+      server_aliases [ "myproj", node['hostname'] ']
       rails_env "production"
     end
 

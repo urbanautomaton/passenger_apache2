@@ -34,7 +34,7 @@ if platform?("ubuntu","debian")
   end
 end
 
-template "#{node[:apache][:dir]}/mods-available/passenger.conf" do
+template "#{node['apache']['dir']}/mods-available/passenger.conf" do
   cookbook "passenger_apache2"
   source "passenger.conf.erb"
   owner "root"
@@ -43,5 +43,5 @@ template "#{node[:apache][:dir]}/mods-available/passenger.conf" do
 end
 
 apache_module "passenger" do
-  module_path node[:passenger][:module_path]
+  module_path node['passenger']['module_path']
 end
